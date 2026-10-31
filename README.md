@@ -207,25 +207,25 @@ Após iniciar o backend e o frontend conforme as instruções anteriores, o sist
 
 Ao acessar o endereço local, será apresentada a interface principal do demonstrador, na qual o usuário poderá interagir com o sistema por meio de perguntas em linguagem natural.
 
-figura1
+![Tela inicial](projeto-docs/imagens/figura1.png)
 
 2. Enviar uma pergunta
 
 Digite uma pergunta relacionada ao conteúdo dos documentos científicos disponíveis na base documental e envie a mensagem. O backend receberá a consulta e iniciará o processamento por meio do mecanismo RAG.
 
-figura2
+![Pergunta enviada](projeto-docs/imagens/figura2.png)
 
 3. Consultar os documentos recuperados
 
 Após o processamento da consulta, o sistema apresenta os trechos documentais recuperados pela busca semântica. Essas informações permitem observar quais partes da base documental foram selecionadas para auxiliar na elaboração da resposta.
 
-figura3
+![Documentos recuperados](projeto-docs/imagens/figura3.png)
 
 4. Visualizar o contexto e a resposta gerada
 
 Além dos documentos recuperados, o sistema permite consultar o contexto construído para a geração da resposta. Esse contexto, juntamente com a pergunta original, é encaminhado ao modelo de linguagem, que produz a resposta apresentada na interface.
 
-figura4
+![Contexto e resposta](projeto-docs/imagens/figura4.png)
 
 # Observações
 
