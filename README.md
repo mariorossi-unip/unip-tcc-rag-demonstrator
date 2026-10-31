@@ -199,6 +199,44 @@ npm run dev
 O frontend ficará disponível em:
 http://localhost:5173
 
+# Como utilizar o sistema:
+
+Após iniciar o backend e o frontend conforme as instruções anteriores, o sistema poderá ser acessado pelo navegador no endereço http://localhost:5173
+
+1. Acessar a interface
+
+Ao acessar o endereço local, será apresentada a interface principal do demonstrador, na qual o usuário poderá interagir com o sistema por meio de perguntas em linguagem natural.
+
+figura1
+
+2. Enviar uma pergunta
+
+Digite uma pergunta relacionada ao conteúdo dos documentos científicos disponíveis na base documental e envie a mensagem. O backend receberá a consulta e iniciará o processamento por meio do mecanismo RAG.
+
+figura2
+
+3. Consultar os documentos recuperados
+
+Após o processamento da consulta, o sistema apresenta os trechos documentais recuperados pela busca semântica. Essas informações permitem observar quais partes da base documental foram selecionadas para auxiliar na elaboração da resposta.
+
+figura3
+
+4. Visualizar o contexto e a resposta gerada
+
+Além dos documentos recuperados, o sistema permite consultar o contexto construído para a geração da resposta. Esse contexto, juntamente com a pergunta original, é encaminhado ao modelo de linguagem, que produz a resposta apresentada na interface.
+
+figura4
+
+# Observações
+
+O sistema foi desenvolvido para execução local e requer que o backend e o frontend estejam em funcionamento.
+
+A utilização da API da OpenAI exige uma chave de acesso válida, configurada conforme as instruções de instalação.
+
+A base documental utilizada no demonstrador é composta por artigos científicos relacionados ao tema Retrieval Augmented Generation.
+
+A qualidade e a pertinência das respostas dependem, entre outros fatores, da pergunta enviada e das informações disponíveis na base documental.
+
 # Autor
 
 Mario Rossi Bracco da Costa - Universidade Paulista (UNIP)
