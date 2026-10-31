@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido como um demonstrador educacional, com a intenção
 - Visualização do contexto construído e providenciado ao modelo.
 - Visualização da resposta gerada.
 - Histórico de conversa baseado na sessão atual.
-- Inspetor da execução de RAG para perguntas préviamente enviadas.
+- Inspetor da execução de RAG para perguntas previamente enviadas.
 - Execução local do backend e frontend.
 
 # Arquitetura backend
@@ -34,8 +34,8 @@ Implementada em Python utilizando FastAPI.
 2. Gera um embedding para a questão.
 3. Busca chunks de documentos que sejam semânticamente similares no banco de vetores.
 4. Constrói um contexto baseado nos documentos recuperados.
-5. Envia a pergunta e os documetnos recuperados para o modelo.
-6. Retorna a reposta gerada com as informações pertinentes à recuperação de dados feita durante o processo.
+5. Envia a pergunta e os documentos recuperados para o modelo.
+6. Retorna a resposta gerada com as informações pertinentes à recuperação de dados feita durante o processo.
 
 # Arquitetura frontend
 
@@ -65,6 +65,8 @@ Modelo OpenAI
 Resposta gerada
 
 # Estrutura
+
+```text
 
 PROJETO/
 │
@@ -97,6 +99,8 @@ PROJETO/
 ├── .gitignore
 └── README.md
 
+```
+
 # Requisitos
 
 - Python 3.11 ou mais recente
@@ -123,27 +127,48 @@ Por motivos de segurança, a chave utilizada no desenvolvimento NÃO está inclu
 # Setup do backend
 
 1. Abra o terminal e navegue ao diretório /backend:
-pwsh-> cd backend
+
+```powershell
+cd backend
+```
+
 2. Crie um venv Python:
-pwsh-> python -m venv .venv
+   
+```powershell
+python -m venv .venv
+```
+
 3. Ative o venv:
-pwsh-> .\.venv\Scripts\Activate.ps1
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
 4. Instale as dependências:
-pwsh-> pip install -r requirements.txt
+```powershell
+pip install -r requirements.txt
+```
+
 5. Configure a chave da API em:
 backend/.env
 
-- Ingestion de documentos
+- Ingest de documentos
 
 1. Coloque os PDFs desejados (já providenciados documentos relevantes sobre RAG) em:
 backend/data/papers/
 2. Rode o script de ingestion:
-pwsh-> python -m scripts.ingest
+
+```powershell
+python -m scripts.ingest
+```
 
 - Inicie a API
 
 No diretório backend, rode:
-pwsh-> uvicorn app.main:app --reload --port 8000
+
+```powershell
+uvicorn app.main:app --reload --port 8000
+```
 
 A API ficará disponível em:
 http://localhost:8000
@@ -154,22 +179,69 @@ http://localhost:8000/docs
 # Setup do frontend
 
 1. Abra outro terminal e navegue ao diretório /frontend:
-pwsh-> cd frontend
 
-2. Instale o Node.js e dependências:
-pwsh-> npm intall
+```powershell
+cd frontend
+```
 
-3. Inicie o servidor de desenvolvimento:
-pwsh-> npm run dev
+3. Instale o Node.js e dependências:
+
+```powershell
+npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```powershell
+npm run dev
+```
 
 O frontend ficará disponível em:
 http://localhost:5173
+
+# Como utilizar o sistema:
+
+Após iniciar o backend e o frontend conforme as instruções anteriores, o sistema poderá ser acessado pelo navegador no endereço http://localhost:5173
+
+1. Acessar a interface
+
+Ao acessar o endereço local, será apresentada a interface principal do demonstrador, na qual o usuário poderá interagir com o sistema por meio de perguntas em linguagem natural.
+
+figura1
+
+2. Enviar uma pergunta
+
+Digite uma pergunta relacionada ao conteúdo dos documentos científicos disponíveis na base documental e envie a mensagem. O backend receberá a consulta e iniciará o processamento por meio do mecanismo RAG.
+
+figura2
+
+3. Consultar os documentos recuperados
+
+Após o processamento da consulta, o sistema apresenta os trechos documentais recuperados pela busca semântica. Essas informações permitem observar quais partes da base documental foram selecionadas para auxiliar na elaboração da resposta.
+
+figura3
+
+4. Visualizar o contexto e a resposta gerada
+
+Além dos documentos recuperados, o sistema permite consultar o contexto construído para a geração da resposta. Esse contexto, juntamente com a pergunta original, é encaminhado ao modelo de linguagem, que produz a resposta apresentada na interface.
+
+figura4
+
+# Observações
+
+O sistema foi desenvolvido para execução local e requer que o backend e o frontend estejam em funcionamento.
+
+A utilização da API da OpenAI exige uma chave de acesso válida, configurada conforme as instruções de instalação.
+
+A base documental utilizada no demonstrador é composta por artigos científicos relacionados ao tema Retrieval Augmented Generation.
+
+A qualidade e a pertinência das respostas dependem, entre outros fatores, da pergunta enviada e das informações disponíveis na base documental.
 
 # Autor
 
 Mario Rossi Bracco da Costa - Universidade Paulista (UNIP)
 
-# Licensa
+# Licença
 
 Esse projeto foi desenvolvido com propósitos acadêmicos.
 
